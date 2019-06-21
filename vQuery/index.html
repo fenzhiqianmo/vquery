@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的js插件</title>
+	<script src="./v.js"></script>
+	<script>
+		$(function() {
+			function aa(e) {
+				alert($.fn.e.getEvent(e))
+				$.fn.e.stopPropagation(e)
+			}
+			function bb() {
+				alert(222)
+			}
+			function cc(e) {
+				$.fn.e.preventDefault(e)
+			}
+			$('#div1 li span').css('background', 'Red').on('click', aa)
+			$('#div1 li').on('click', bb)
+			$('#a1').on('click', cc)
+			var arr = {
+				'0': 1,
+				'1': 2,
+				'2': 3,
+				length: 3
+			}
+			$.fn.toArray(arr).forEach(item => {
+				console.log(item)
+			})
+			console.log(222, $("#span1").parent().parent().children().last().css('background', 'red'))
+		})
+	</script>
+</head>
+<body>
+	<a id='a1' href="http://ww.baidu.com">1</a>
+	<div id="div1" class="div1">
+		<ul>
+			<li></li>
+			<li>2</li>
+			<li><span id="span1">234</span>3</li>
+			<li>4</li>
+		</ul>
+		<input id="input1" type="text"  value="234234"/>
+		<input id="input2" type="text"  value="234234"/>
+		<ul id="s2">
+			<li a="1" class="s1">1</li>
+			<li a="2" class="s2 s3">2</li>
+			<li a="3" class="s3 s4 s5">3</li>
+	</ul>
+	</div>
+	<div id="div2" class="div1">234134234</div>
+	<div id="div3" class="div5">23413423411</div>
+	<div id="div3" class="div5">23413423411</div>
+	<div>1</div>
+</body>
+</html>
